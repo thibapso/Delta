@@ -1,0 +1,36 @@
+.slogan {
+    background-color: #EFF6FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Garante que o texto também fique centralizado */
+    
+}
+
+.sloganTitle {
+    width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.sloganTitle h1 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #263238;
+    margin-top: 88px;
+    width: 807px; /* Define a largura fixa do título */
+}
+
+.sloganProfessor {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
+    height: 100%; /* Ajuste a altura conforme necessário */
+}
+
+.sloganProfessor img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    width: 780px; /* Define a largura desejada */
+    height: 580px; /* Mantém a proporção da imagem */
+}

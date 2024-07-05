@@ -1,0 +1,40 @@
+.descubraTitle {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    color: #263238;
+    font-size: 28px;
+}
+
+.descubraCards {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 56px 0px 0px 0px;
+    color: #EFF6FF;
+}
+
+.Cards__BemEstar, .Cards__Fisica, .Cards__Geometria {
+    width: 20%;
+    height: 455px;
+    margin: 0% 3% 0% 3%;
+}
+
+.Cards__BemEstar h2, .Cards__Fisica h2, .Cards__Geometria h2 {
+    margin-top: 16px;
+}
+
+.Cards__BemEstar {
+    border-radius: 10px;
+    background: rgba(16, 185, 129, 0.80);
+}
+
+.Cards__Fisica {
+    border-radius: 10px;
+    background: rgba(129, 140, 248, 0.80);
+}
+
+.Cards__Geometria {
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.80);
+}

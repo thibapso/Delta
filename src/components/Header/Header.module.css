@@ -1,0 +1,108 @@
+header {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do header */
+    background-color: #e243;
+}
+
+nav {
+    background-color: #FFFFFF;
+    width: 100%; /* Define a largura como 90% do contêiner pai */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Espaça a logo e a lista */
+    color: #2563EB;
+    position: fixed;
+    box-shadow:
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.navbarContent {
+    width: 72%; /* Define a largura como 90% do contêiner pai */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaça a logo e a lista */
+}
+
+.navbarLogo a {
+    font-size: 27px; /* Ajuste este valor conforme necessário */
+    font-weight: 600;
+    text-decoration: none; /* Remove decoração de texto */
+    color: #2563EB; /* Certifique-se de que o logo tenha a cor correta */
+    transition: color 0.3s; /* Transição suave para a mudança de cor */
+}
+
+.navbarLogo a:hover {
+    color: #073fb8; /* Cor do título ao passar o mouse */
+}
+
+.navbarMenu ul {
+    display: flex;
+    gap: 10px;
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão da lista */
+    margin: 0; /* Remove a margem padrão da lista */
+    gap: 24px;
+}
+
+.navbarMenu a {
+    text-decoration: none; /* Remove decoração de texto */
+    color: #2563EB; /* Certifique-se de que os itens do menu tenham a cor correta */
+    font-size: 17px;
+    font-weight: 500;
+    position: relative; /* Necessário para o pseudo-elemento */
+    transition: color 0.3s; /* Transição suave para a mudança de cor */
+}
+
+.navbarMenu a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #2563EB; /* Cor da linha */
+    transition: width 0.3s, background-color 0.3s; /* Transição suave para a linha */
+    position: absolute;
+    bottom: -5px; /* Posição da linha em relação ao texto */
+    left: 0;
+}
+
+.navbarMenu a:hover::after {
+    width: 100%; /* Aumenta a linha ao passar o mouse */
+}
+
+/* Estilos específicos para cada link */
+.moedas:hover, .imc:hover {
+    color: #10B981; /* Cor ao passar o mouse para Moedas */
+}
+
+.moedas:hover::after {
+    background: #10B981; /* Cor da linha ao passar o mouse para Moedas */
+}
+
+.imc:hover::after {
+    background: #10B981; /* Cor da linha ao passar o mouse para IMC */
+}
+
+.distancia:hover, .temperatura:hover {
+    color: #818CF8; /* Cor ao passar o mouse para Distância */
+}
+
+.distancia:hover::after {
+    background: #818CF8; /* Cor da linha ao passar o mouse para Distância */
+}
+
+.temperatura:hover::after {
+    background: #818CF8; /* Cor da linha ao passar o mouse para Temperatura */
+}
+
+.formas:hover {
+    color: #EF4444; /* Cor ao passar o mouse para Formas */
+}
+
+.formas:hover::after {
+    background: #EF4444; /* Cor da linha ao passar o mouse para Formas */
+}

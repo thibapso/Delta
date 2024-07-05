@@ -1,0 +1,58 @@
+/* Barra Lateral e Seleção */
+html ::-webkit-scrollbar {
+    width: 10px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    /* From https://css.glass */
+    background: rgba(26, 85, 216, 0.69);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    border: 1px solid rgba(26, 85, 216, 0.24);
+}
+
+html ::-webkit-scrollbar-track {
+    background: #DBE1E3;
+}
+
+html ::selection {
+    color: #DBE1E3;
+    background-color: #2563EB;
+}
+
+/* BACK TO TOP */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(37, 99, 235, 0.87);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+
+.back-to-top span {
+    color: #fff;
+    font-size: 3rem;
+    transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+    background-color: rgba(50, 80, 300, 1);
+}
+
+.back-to-top:hover span {
+    transform: translateY(-4px);
+}

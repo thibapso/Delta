@@ -1,0 +1,12 @@
+.moedas {
+    background-color: #ecfdf5;
+    height: 300px;
+    margin-top: 64px;
+    padding: 48px;
+}
+
+.moedasTitle {
+    text-align: center;
+    color: #1E1E1E;
+    font-size: 24px;
+}
