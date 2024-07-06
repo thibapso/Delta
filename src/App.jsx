@@ -7,6 +7,7 @@ import Imc from './components/Imc'
 import Distancia from './components/Distancia'
 import Temperatura from './components/Temperatura'
 import Formas from './components/Formas'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Distancia />
       <Temperatura />
       <Formas />
+      <Footer />
 
       <a href="#" className="back-to-top">
         <span className="material-icons-outlined">keyboard_arrow_up</span>
