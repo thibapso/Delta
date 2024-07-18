@@ -1,34 +1,83 @@
-import styles from './Descubra.module.css';
+import styles from "./Descubra.module.css";
 
 function Descubra() {
-    return (
-        <section id="descubra" className={styles.descubra}>
-            <div className={styles.descubraTitle}>
-                <h2>Descubra!</h2>
-            </div>
-            <div className={styles.descubraCards}>
-                <div className={styles.Cards__BemEstar}>
-                    <h2>Bem-estar</h2>
-                    <p className="material-icons-outlined">spa</p>
-                    <div>
-                        <ul>
-                            <li><a href="">- Conversão de Moedas</a></li>
-                        </ul>
-                    </div>
-                </div>
+  return (
+    <section id="descubra" className={styles.descubra}>
+      <div className={styles.descubraTitle}>
+        <h2>Descubra!</h2>
+      </div>
+      <div className={styles.descubraCards}>
+        <div className={styles.Cards__BemEstar}>
+          <div className={styles.iconWrapper}>
+            <i className="material-icons-outlined">spa</i>
+          </div>
+          <h2>Bem-estar</h2>
+          <div className={styles.Tag}>
+            <ul>
+              <li>
+                <a href="#moedas">Moedas</a>
+              </li>
+              <li>
+                <a href="#imc">IMC</a>
+              </li>
+            </ul>
+          </div>
+          <p className={styles.Cards__Paragrafo}>
+            Ferramentas para saúde e finanças: <span>conversor de moedas</span> para
+            transações e <span>calculadora de IMC</span> para o vigor.
+          </p>
+          <div className={styles.Cards__Button}>
+            <a href="#moedas">Começar</a>
+          </div>
+        </div>
 
-                <div className={styles.Cards__Fisica}>
-                    <h2>Física</h2>
-                    <p className="material-icons-outlined">cloud</p>
-                </div>
+        <div className={styles.Cards__Fisica}>
+          <div className={styles.iconWrapper}>
+            <i className="material-icons-outlined">air</i>
+          </div>
+          <h2>Física</h2>
+          <div className={styles.Tag}>
+            <ul>
+              <li>
+                <a href="#distancia">Distância</a>
+              </li>
+              <li>
+                <a href="#temperatura">Temperatura</a>
+              </li>
+            </ul>
+          </div>
+          <p className={styles.Cards__Paragrafo}>
+            Conversores práticos: <span>distância</span> para viagens e <span>temperatura</span> para
+            diferentes condições climáticas.
+          </p>
+          <div className={styles.Cards__Button}>
+            <a href="#distancia">Começar</a>
+          </div>
+        </div>
 
-                <div className={styles.Cards__Geometria}>
-                    <h2>Geometria</h2>
-                    <p className="material-icons-outlined">category</p>
-                </div>
-            </div>
-        </section>
-    )
+        <div className={styles.Cards__Geometria}>
+          <div className={styles.iconWrapper}>
+            <i className="material-icons-outlined">category</i>
+          </div>
+          <h2>Geometria</h2>
+          <div className={styles.Tag}>
+            <ul>
+              <li>
+                <a href="#formas">Formas</a>
+              </li>
+            </ul>
+          </div>
+          <p className={styles.Cards__Paragrafo}>
+            Ferramenta para cálculos geométricos: <span>conversor de formas</span> simplifica
+            figuras e suas propriedades.
+          </p>
+          <div className={styles.Cards__Button}>
+            <a href="#formas">Começar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Descubra;

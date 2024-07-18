@@ -1,40 +1,204 @@
+.descubra {
+  background-color: #eff6ff;
+  padding: 40px 0;
+}
+
 .descubraTitle {
-    display: flex;
-    justify-content: center;
-    margin-top: 48px;
-    color: #263238;
-    font-size: 28px;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  color: #263238;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .descubraCards {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 56px 0px 0px 0px;
-    color: #EFF6FF;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  margin: 40px 0;
+  flex-wrap: wrap;
 }
 
-.Cards__BemEstar, .Cards__Fisica, .Cards__Geometria {
-    width: 20%;
-    height: 455px;
-    margin: 0% 3% 0% 3%;
-}
-
-.Cards__BemEstar h2, .Cards__Fisica h2, .Cards__Geometria h2 {
-    margin-top: 16px;
-}
-
-.Cards__BemEstar {
-    border-radius: 10px;
-    background: rgba(16, 185, 129, 0.80);
-}
-
-.Cards__Fisica {
-    border-radius: 10px;
-    background: rgba(129, 140, 248, 0.80);
-}
-
+.Cards__BemEstar,
+.Cards__Fisica,
 .Cards__Geometria {
-    border-radius: 10px;
-    background: rgba(239, 68, 68, 0.80);
+  width: 20%;
+  height: auto;
+  margin: 0 1.5%;
+  padding: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Cards__BemEstar:hover,
+.Cards__Fisica:hover,
+.Cards__Geometria:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.Cards__BemEstar::before,
+.Cards__Fisica::before,
+.Cards__Geometria::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+  transition: background-color 0.3s;
+}
+
+.Cards__BemEstar:hover::before {
+  background: rgba(16, 185, 129, 0.6);
+}
+
+.Cards__Fisica:hover::before {
+  background: rgba(129, 140, 248, 0.6);
+}
+
+.Cards__Geometria:hover::before {
+  background: rgba(239, 68, 68, 0.6);
+}
+
+.Cards__BemEstar i,
+.Cards__Fisica i,
+.Cards__Geometria i {
+  font-size: 64px;
+  color: #ffffff;
+}
+
+.Cards__BemEstar h2,
+.Cards__Fisica h2,
+.Cards__Geometria h2 {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #263238;
+}
+
+div ul {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.Tag ul li {
+  display: flex; /* Adiciona display flex para alinhar os itens */
+  justify-content: center;
+  align-items: center;
+}
+
+.Tag ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  color: #efefef;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 28px;
+  min-width: 80px; /* Adiciona um min-width para consistência */
+}
+
+.Cards__BemEstar .Tag ul li a {
+  background: rgba(16, 185, 129, 0.68);
+}
+
+.Cards__Fisica .Tag ul li a {
+  background: rgba(129, 140, 248, 0.68);
+}
+
+.Cards__Geometria .Tag ul li a {
+  background: rgba(239, 68, 68, 0.68);
+}
+
+.Cards__Paragrafo {
+  text-align: center;
+  color: rgba(30, 30, 30, 0.8);
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 30px auto 10px;
+}
+
+.Cards__Paragrafo span {
+  color: rgba(30, 30, 30, 0.9);
+  font-weight: 500;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  margin: 12px auto 0;
+  border-radius: 50%;
+}
+
+.Cards__BemEstar .Cards__Button {
+  background: rgba(16, 185, 129, 0.7);
+}
+
+.Cards__Fisica .Cards__Button {
+  background-color: rgba(129, 140, 248, 0.7);
+}
+
+.Cards__Geometria .Cards__Button {
+  background-color: rgba(239, 68, 68, 0.7);
+}
+
+.Cards__BemEstar .iconWrapper,
+.Cards__BemEstar .Cards__Button:hover {
+  background-color: rgba(16, 185, 129, 1);
+  color: #ffffff;
+  transition: background-color 0.5s;
+}
+
+.Cards__Fisica .iconWrapper,
+.Cards__Fisica .Cards__Button:hover {
+  background-color: rgba(129, 140, 248, 1);
+  transition: background-color 0.5s;
+}
+
+.Cards__Geometria .iconWrapper,
+.Cards__Geometria .Cards__Button:hover {
+  background-color: rgba(239, 68, 68, 1);
+  transition: background-color 0.5s;
+}
+
+.Cards__Button {
+  width: 50%;
+  margin: 16px auto;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.6s;
+}
+
+.Cards__Button a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #efefef;
+  font-weight: 600;
 }

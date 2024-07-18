@@ -1,36 +1,53 @@
 .slogan {
-    background-color: #EFF6FF;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    text-align: center; /* Garante que o texto também fique centralizado */
-    
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center; /* Garante que o texto também fique centralizado */
+}
+
+.sloganContent {
+  width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
+  max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+  padding: 0 20px; /* Adiciona um espaçamento interno nas laterais */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 .sloganTitle {
-    width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
+  margin-top: 100px; /* Reduz o espaçamento superior */
 }
 
 .sloganTitle h1 {
-    font-size: 35px;
-    font-weight: 700;
-    color: #263238;
-    margin-top: 88px;
-    width: 807px; /* Define a largura fixa do título */
+  font-size: 40px; /* Reduz um pouco o tamanho do título */
+  font-weight: 700;
+  color: #263238;
+  width: 100%; /* Ajusta a largura para ocupar todo o espaço disponível */
+  max-width: 807px; /* Define uma largura máxima para o título */
+  margin: 0 auto; /* Centraliza o título horizontalmente */
+  position: relative; /* Adiciona posição relativa para o strong */
+}
+
+.sloganTitle h1 .highlight {
+  /* Aplica um gradiente azul como plano de fundo, utilizando o texto como a máscara */
+  background-image: linear-gradient(
+    to right,
+    rgba(37, 99, 235, 0.98),
+    rgba(17, 78, 212, 1)
+  );
+  -webkit-background-clip: text; /* Suporte para navegadores WebKit */
+  background-clip: text; /* Define a área de exibição do fundo como o próprio texto */
+  color: transparent; /* Torna o texto transparente para que apenas o gradiente seja visível */
+  font-weight: 600;
 }
 
 .sloganProfessor {
-    margin-top: 32px;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
-    height: 100%; /* Ajuste a altura conforme necessário */
+  margin-top: 32px; /* Mantém o espaçamento superior menor */
+  width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
 }
 
 .sloganProfessor img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
-    width: 780px; /* Define a largura desejada */
-    height: 580px; /* Mantém a proporção da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  width: 100%; /* Ajusta a imagem para ocupar toda a largura disponível */
+  max-width: 820px; /* Define uma largura máxima para a imagem */
+  max-height: 620px; /* Define uma altura máxima para a imagem */
 }

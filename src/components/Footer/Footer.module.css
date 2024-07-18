@@ -1,5 +1,24 @@
+/* Defina a altura mínima do corpo e do contêiner principal */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* O contêiner principal deve crescer para preencher o espaço disponível */
+.main-content {
+    flex: 1;
+}
+
+/* Estilo do footer */
 .footer {
     background-color: #263238;
     padding: 48px;
 }
-

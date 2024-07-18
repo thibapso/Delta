@@ -1,58 +1,102 @@
+body {
+  background-color: #eff6ff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para a seção verde */
+.fundo__verde {
+  background-color: rgba(
+    200,
+    230,
+    200,
+    0.1
+  ); /* Verde acizentado com transparência */
+  padding: 20px;
+}
+
+/* Estilos para a seção lilás */
+.fundo__lilas {
+  background-color: rgba(
+    210,
+    200,
+    230,
+    0.1
+  ); /* Lilás acizentado com transparência */
+  padding: 20px;
+}
+
+/* Estilos para a seção vermelho */
+.fundo__vermelho {
+  background-color: rgba(
+    255,
+    180,
+    160,
+    0.1
+  ); /* Vermelho acizentado com transparência */
+  padding: 20px;
+}
+
 /* Barra Lateral e Seleção */
 html ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 html ::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    /* From https://css.glass */
-    background: rgba(26, 85, 216, 0.69);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.2px);
-    -webkit-backdrop-filter: blur(4.2px);
-    border: 1px solid rgba(26, 85, 216, 0.24);
+  border-radius: 20px;
+  /* From https://css.glass */
+  background: rgba(26, 85, 216, 0.69);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  border: 1px solid rgba(26, 85, 216, 0.24);
 }
 
 html ::-webkit-scrollbar-track {
-    background: #DBE1E3;
+  background: #dbe1e3;
 }
 
 html ::selection {
-    color: #DBE1E3;
-    background-color: #2563EB;
+  color: #dbe1e3;
+  background-color: #2563eb;
 }
 
 /* BACK TO TOP */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(37, 99, 235, 0.87);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    transition: 0.2s ease-out;
+  position: fixed;
+  bottom: -5rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 99, 235, 0.87);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: bottom 0.3s ease-out;
+  z-index: 1;
 }
 
 .back-to-top span {
-    color: #fff;
-    font-size: 3rem;
-    transition: 0.2s ease-out;
+  color: #fff;
+  font-size: 3rem;
+  transition: transform 0.3s ease-out;
+}
+
+.back-to-top.visible {
+  bottom: 2rem;
 }
 
 .back-to-top:hover {
-    background-color: rgba(50, 80, 300, 1);
+  background-color: rgba(37, 99, 235, 1);
 }
 
 .back-to-top:hover span {
-    transform: translateY(-4px);
+  transform: translateY(-4px);
 }

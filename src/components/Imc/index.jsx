@@ -52,7 +52,7 @@ function Imc() {
             <div className={styles.inputBox}>
               <label htmlFor="weight">Peso em quilograma (kg)</label>
               <div className={styles.inputField}>
-                <i className="material-icons-outlined">fitness_center</i>
+                <i className="material-icons-outlined">scale</i>
                 <input
                   type="number"
                   step="0.01"
