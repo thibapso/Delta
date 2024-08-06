@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Imc.module.css';
+import styles from './Imc.module.css'; // Importação correta do CSS module
 import IMGHalter from '../../assets/halter.png';
 
 function Imc() {

@@ -23,7 +23,7 @@ function Descubra() {
             </ul>
           </div>
           <p className={styles.Cards__Paragrafo}>
-            Ferramentas para saúde e finanças: <span>conversor de moedas</span> para
+          Material para saúde e finanças: <span>conversor de moedas</span> para
             transações e <span>calculadora de IMC</span> para o vigor.
           </p>
           <div className={styles.Cards__Button}>
@@ -39,7 +39,7 @@ function Descubra() {
           <div className={styles.Tag}>
             <ul>
               <li>
-                <a href="#distancia">Distância</a>
+                <a href="#medidas">Medidas</a>
               </li>
               <li>
                 <a href="#temperatura">Temperatura</a>
@@ -47,11 +47,11 @@ function Descubra() {
             </ul>
           </div>
           <p className={styles.Cards__Paragrafo}>
-            Conversores práticos: <span>distância</span> para viagens e <span>temperatura</span> para
+            Conversores práticos: <span>medidas</span> para calcular e <span>temperatura</span> para
             diferentes condições climáticas.
           </p>
           <div className={styles.Cards__Button}>
-            <a href="#distancia">Começar</a>
+            <a href="#medidas">Começar</a>
           </div>
         </div>
 
@@ -68,8 +68,7 @@ function Descubra() {
             </ul>
           </div>
           <p className={styles.Cards__Paragrafo}>
-            Ferramenta para cálculos geométricos: <span>conversor de formas</span> simplifica
-            figuras e suas propriedades.
+            Ferramenta para cálculos geométricos: <span>calculadora de formas</span> para encontrar perímetros e áreas.
           </p>
           <div className={styles.Cards__Button}>
             <a href="#formas">Começar</a>

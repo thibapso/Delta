@@ -31,8 +31,8 @@
   /* Aplica um gradiente azul como plano de fundo, utilizando o texto como a máscara */
   background-image: linear-gradient(
     to right,
-    rgba(37, 99, 235, 0.98),
-    rgba(17, 78, 212, 1)
+    rgba(37, 99, 235, 0.96),
+    rgba(17, 78, 212, 0.96)
   );
   -webkit-background-clip: text; /* Suporte para navegadores WebKit */
   background-clip: text; /* Define a área de exibição do fundo como o próprio texto */

@@ -21,7 +21,7 @@ nav {
 }
 
 .navbarContent {
-  width: 72%;
+  width: 72%; /* Certifique-se de que o valor de largura aqui corresponda ao do footer */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,8 +33,8 @@ nav {
   text-decoration: none;
   background-image: linear-gradient(
     to right,
-    rgba(37, 99, 235, 0.98),
-    rgba(17, 78, 212, 1)
+    rgba(37, 99, 235, 0.96),
+    rgba(17, 78, 212, 0.96)
   );
   -webkit-background-clip: text; /* Suporte para navegadores WebKit */
   background-clip: text; /* Define a área de exibição do fundo como o próprio texto */
@@ -92,12 +92,12 @@ nav {
   background: #10b981;
 }
 
-.distancia:hover,
+.medidas:hover,
 .temperatura:hover {
   color: #818cf8;
 }
 
-.distancia:hover::after {
+.medidas:hover::after {
   background: #818cf8;
 }
 

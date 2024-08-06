@@ -62,6 +62,14 @@ html ::selection {
   background-color: #2563eb;
 }
 
+.divider {
+  margin: 0px;
+  flex-shrink: 0;
+  border-width: 0px 0px thin;
+  border-style: solid;
+  border-color: rgba(195, 197, 201, 0.4);
+}
+
 /* BACK TO TOP */
 
 html {

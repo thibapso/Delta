@@ -5,7 +5,7 @@ import Slogan from "./components/Slogan";
 import Descubra from "./components/Descubra";
 import Moedas from "./components/Moedas";
 import Imc from "./components/Imc";
-import Distancia from "./components/Distancia";
+import Medidas from "./components/Medidas";
 import Temperatura from "./components/Temperatura";
 import Formas from "./components/Formas";
 import Footer from "./components/Footer";
@@ -38,10 +38,12 @@ function App() {
       <Descubra />
       <div className="fundo__verde">
         <Moedas />
+        <hr className="divider"/>
         <Imc />
       </div>
       <div className="fundo__lilas">
-        <Distancia />
+        <Medidas />
+        <hr className="divider"/>
         <Temperatura />
       </div>
       <div className="fundo__vermelho">
