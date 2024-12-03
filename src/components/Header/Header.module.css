@@ -6,7 +6,7 @@ header {
 nav {
   background-color: #ffffff;
   width: 100%;
-  height: 56px;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,14 +14,14 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1; /* Certifique-se de que a navbar tenha um valor alto de z-index */
+  z-index: 1;
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
 .navbarContent {
-  width: 72%; /* Certifique-se de que o valor de largura aqui corresponda ao do footer */
+  width: 72%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,14 +31,12 @@ nav {
   font-size: 28px;
   font-weight: 600;
   text-decoration: none;
-  background-image: linear-gradient(
-    to right,
-    rgba(37, 99, 235, 0.96),
-    rgba(17, 78, 212, 0.96)
-  );
-  -webkit-background-clip: text; /* Suporte para navegadores WebKit */
-  background-clip: text; /* Define a área de exibição do fundo como o próprio texto */
-  color: transparent; /* Torna o texto transparente para que apenas o gradiente seja visível */
+  background-image: linear-gradient(to right,
+      rgba(37, 99, 235, 0.96),
+      rgba(17, 78, 212, 0.96));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   transition: color 0.3s;
 }
 
@@ -48,7 +46,7 @@ nav {
 
 .navbarMenu ul {
   display: flex;
-  gap: 24px;
+  gap: 1.25rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -111,4 +109,62 @@ nav {
 
 .formas:hover::after {
   background: #ef4444;
+}
+
+/* Estilo para o ícone do menu hambúrguer */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #2563eb;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbarMenu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbarMenu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbarMenu a {
+    font-size: 20px;
+    /* Ajuste de tamanho opcional */
+  }
+
+  .navbarMenu a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s, background-color 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+
+  .navbarMenu a:hover::after {
+    width: 100%;
+  }
+
+  .menuOpen {
+    display: flex;
+    /* Mostra o menu quando ativo */
+  }
 }
