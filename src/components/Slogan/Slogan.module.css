@@ -2,52 +2,84 @@
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza horizontalmente */
-  text-align: center; /* Garante que o texto também fique centralizado */
+  align-items: center;
+  text-align: center;
+  padding-top: 1.25rem;
+  /* 20px */
 }
 
 .sloganContent {
-  width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
-  max-width: 1200px; /* Define uma largura máxima para o conteúdo */
-  padding: 0 20px; /* Adiciona um espaçamento interno nas laterais */
-  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+  width: 100%;
+  max-width: 75rem;
+  /* 1200px */
+  padding: 0 1.25rem;
+  /* 20px */
+  box-sizing: border-box;
 }
 
 .sloganTitle {
-  margin-top: 100px; /* Reduz o espaçamento superior */
+  margin-top: 3.125rem;
+  /* 50px */
 }
 
 .sloganTitle h1 {
-  font-size: 40px; /* Reduz um pouco o tamanho do título */
+  font-size: 2rem;
+  /* 32px */
   font-weight: 700;
   color: #263238;
-  width: 100%; /* Ajusta a largura para ocupar todo o espaço disponível */
-  max-width: 807px; /* Define uma largura máxima para o título */
-  margin: 0 auto; /* Centraliza o título horizontalmente */
-  position: relative; /* Adiciona posição relativa para o strong */
+  width: 100%;
+  max-width: 50.44rem;
+  /* 807px */
+  margin: 0 auto;
+  padding: 1rem 0;
 }
 
 .sloganTitle h1 .highlight {
-  /* Aplica um gradiente azul como plano de fundo, utilizando o texto como a máscara */
-  background-image: linear-gradient(
-    to right,
-    rgba(37, 99, 235, 0.96),
-    rgba(17, 78, 212, 0.96)
-  );
-  -webkit-background-clip: text; /* Suporte para navegadores WebKit */
-  background-clip: text; /* Define a área de exibição do fundo como o próprio texto */
-  color: transparent; /* Torna o texto transparente para que apenas o gradiente seja visível */
+  background-image: linear-gradient(to right, rgba(37, 99, 235, 0.96), rgba(17, 78, 212, 0.96));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-weight: 600;
 }
 
 .sloganProfessor {
-  margin-top: 32px; /* Mantém o espaçamento superior menor */
-  width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
+  margin-top: 1.25rem;
+  /* 20px */
+  width: 100%;
 }
 
 .sloganProfessor img {
-  height: auto; /* Mantém a proporção da imagem */
-  width: 100%; /* Ajusta a imagem para ocupar toda a largura disponível */
-  max-width: 820px; /* Define uma largura máxima para a imagem */
-  max-height: 620px; /* Define uma altura máxima para a imagem */
+  height: auto;
+  width: 100%;
+  max-width: 43.75rem;
+  /* 700px */
+  max-height: 31.25rem;
+  /* 500px */
+}
+
+@media (max-width: 768px) {
+  .sloganTitle h1 {
+    font-size: 1.5rem;
+    /* 24px */
+  }
+
+  .sloganProfessor img {
+    max-width: 31.25rem;
+    /* 500px */
+    max-height: 25rem;
+    /* 400px */
+  }
+}
+
+@media (max-width: 480px) {
+  .sloganTitle h1 {
+    font-size: 1.25rem;
+    /* 20px */
+  }
+
+  .sloganProfessor img {
+    max-width: 100%;
+    max-height: 18.75rem;
+    /* 300px */
+  }
 }

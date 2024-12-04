@@ -96,7 +96,7 @@ div ul {
 }
 
 .Tag ul li {
-  display: flex; /* Adiciona display flex para alinhar os itens */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -112,7 +112,7 @@ div ul {
   font-weight: 700;
   padding: 8px 12px;
   border-radius: 28px;
-  min-width: 80px; /* Adiciona um min-width para consistência */
+  min-width: 80px;
 }
 
 .Cards__BemEstar .Tag ul li a {
@@ -201,4 +201,22 @@ div ul {
   text-decoration: none;
   color: #efefef;
   font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 980px) {
+
+  .Cards__BemEstar,
+  .Cards__Fisica,
+  .Cards__Geometria {
+    width: 80%;
+    /* Ajuste para largura de 80% */
+    margin: 10px auto;
+    /* Centraliza os cards */
+  }
+
+  .descubraCards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
