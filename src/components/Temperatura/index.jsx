@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import styles from './Temperatura.module.css';
+import { useState, useEffect } from "react";
+import styles from "./Temperatura.module.css";
 
 function Temperatura() {
   const [celsius, setCelsius] = useState({ value: 0, original: 0 });
@@ -9,31 +9,43 @@ function Temperatura() {
 
   const handleCelsiusChange = (e) => {
     const value = e.target.value;
-    const v = value === '' ? '' : parseFloat(value);
+    const v = value === "" ? "" : parseFloat(value);
     setCelsius({ ...celsius, value: v });
-    setFahrenheit({ ...fahrenheit, value: v === '' ? '' : (v * 9 / 5) + 32 });
-    setKelvin({ ...kelvin, value: v === '' ? '' : v + 273.15 });
+    setFahrenheit({
+      ...fahrenheit,
+      value: v === "" ? "" : ((v * 9) / 5 + 32).toFixed(2),
+    });
+    setKelvin({ ...kelvin, value: v === "" ? "" : (v + 273.15).toFixed(2) });
   };
 
   const handleFahrenheitChange = (e) => {
     const value = e.target.value;
-    const v = value === '' ? '' : parseFloat(value);
+    const v = value === "" ? "" : parseFloat(value);
     setFahrenheit({ ...fahrenheit, value: v });
-    setCelsius({ ...celsius, value: v === '' ? '' : (v - 32) * 5 / 9 });
-    setKelvin({ ...kelvin, value: v === '' ? '' : ((v - 32) * 5 / 9) + 273.15 });
+    setCelsius({
+      ...celsius,
+      value: v === "" ? "" : (((v - 32) * 5) / 9).toFixed(2),
+    });
+    setKelvin({
+      ...kelvin,
+      value: v === "" ? "" : (((v - 32) * 5) / 9 + 273.15).toFixed(2),
+    });
   };
 
   const handleKelvinChange = (e) => {
     const value = e.target.value;
-    const v = value === '' ? '' : parseFloat(value);
+    const v = value === "" ? "" : parseFloat(value);
     setKelvin({ ...kelvin, value: v });
-    setCelsius({ ...celsius, value: v === '' ? '' : v - 273.15 });
-    setFahrenheit({ ...fahrenheit, value: v === '' ? '' : (v - 273.15) * 9 / 5 + 32 });
+    setCelsius({ ...celsius, value: v === "" ? "" : (v - 273.15).toFixed(2) });
+    setFahrenheit({
+      ...fahrenheit,
+      value: v === "" ? "" : (((v - 273.15) * 9) / 5 + 32).toFixed(2),
+    });
   };
 
   const handleFocus = (setter) => () => {
     setter((prev) => ({ ...prev, original: prev.value }));
-    setter((prev) => ({ ...prev, value: '' }));
+    setter((prev) => ({ ...prev, value: "" }));
   };
 
   const handleBlur = () => {
@@ -54,9 +66,9 @@ function Temperatura() {
       }
     };
 
-    window.addEventListener('click', handleClickOutside);
+    window.addEventListener("click", handleClickOutside);
     return () => {
-      window.removeEventListener('click', handleClickOutside);
+      window.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -79,7 +91,7 @@ function Temperatura() {
           <input
             type="number"
             id="celsius"
-            className={isTransitioning ? styles.transition : ''}
+            className={isTransitioning ? styles.transition : ""}
             value={celsius.value}
             onFocus={handleFocus(setCelsius)}
             onChange={handleCelsiusChange}
@@ -92,7 +104,7 @@ function Temperatura() {
           <input
             type="number"
             id="fahrenheit"
-            className={isTransitioning ? styles.transition : ''}
+            className={isTransitioning ? styles.transition : ""}
             value={fahrenheit.value}
             onFocus={handleFocus(setFahrenheit)}
             onChange={handleFahrenheitChange}
@@ -105,7 +117,7 @@ function Temperatura() {
           <input
             type="number"
             id="kelvin"
-            className={isTransitioning ? styles.transition : ''}
+            className={isTransitioning ? styles.transition : ""}
             value={kelvin.value}
             onFocus={handleFocus(setKelvin)}
             onChange={handleKelvinChange}

@@ -27,23 +27,49 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("scroll", checkScrollTop);
-    return () => window.removeEventListener("scroll", checkScrollTop);
+
+    // Adiciona o código de ancoragem suave
+    const handleAnchorClick = (e) => {
+      e.preventDefault();
+      const targetId = e.currentTarget.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const offset = 60; // Ajuste este valor conforme necessário
+        const topPosition = targetElement.offsetTop - offset;
+
+        window.scrollTo({
+          top: topPosition,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach((anchor) =>
+      anchor.addEventListener("click", handleAnchorClick)
+    );
+
+    return () => {
+      window.removeEventListener("scroll", checkScrollTop);
+      anchors.forEach((anchor) =>
+        anchor.removeEventListener("click", handleAnchorClick)
+      );
+    };
   }, [showScroll]);
 
   return (
     <>
-  
       <Header />
       <Slogan />
       <Descubra />
       <div className="fundo__verde">
         <Moedas />
-        <hr className="divider"/>
+        <hr className="divider" />
         <Imc />
       </div>
       <div className="fundo__lilas">
         <Medidas />
-        <hr className="divider"/>
+        <hr className="divider" />
         <Temperatura />
       </div>
       <div className="fundo__vermelho">

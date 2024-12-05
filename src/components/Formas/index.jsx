@@ -184,48 +184,53 @@ const ShapeCalculator = () => {
   };
 
   return (
-    <div className={styles.containerPrincipal}>
-      <h1 className={styles.title}>Calculadora Geométrica</h1>
-      <div className={styles.card}>
-        <FormSelector
-          label="Escolha a forma:"
-          value={selectedShape}
-          onChange={setSelectedShape}
-          options={[
-            { value: "square", label: "Quadrado" },
-            { value: "rectangle", label: "Retângulo" },
-            { value: "rhombus", label: "Losango" },
-            { value: "triangle", label: "Triângulo" },
-            { value: "trapezoid", label: "Trapézio" },
-            { value: "circle", label: "Círculo" },
-          ]}
-        />
-        <FormSelector
-          label="Escolha a unidade de medida:"
-          value={selectedUnit}
-          onChange={setSelectedUnit}
-          options={[
-            { value: "mm", label: "mm" },
-            { value: "cm", label: "cm" },
-            { value: "m", label: "m" },
-            { value: "km", label: "km" },
-          ]}
-        />
-        <div className={styles.inputGroup}>{renderInputs[selectedShape]}</div>
-        <div className={styles.results}>
-          <h2 className={styles.resultTitle}>Resultados:</h2>
-          <p className={styles.resultText}>
-            Área: <span className={styles.resultValue}>{area.toFixed(2)}</span>{" "}
-            {selectedUnit}²
-          </p>
-          <p className={styles.resultText}>
-            Perímetro:{" "}
-            <span className={styles.resultValue}>{perimeter.toFixed(2)}</span>{" "}
-            {selectedUnit}
-          </p>
+    <section id="formas" className={styles.temperatura}>
+      <div className={styles.containerPrincipal}>
+        <div className={styles.formasTitle}>
+          <h2>Calculadora Geométrica</h2>
+        </div>
+        <div className={styles.card}>
+          <FormSelector
+            label="Escolha a forma:"
+            value={selectedShape}
+            onChange={setSelectedShape}
+            options={[
+              { value: "square", label: "Quadrado" },
+              { value: "rectangle", label: "Retângulo" },
+              { value: "rhombus", label: "Losango" },
+              { value: "triangle", label: "Triângulo" },
+              { value: "trapezoid", label: "Trapézio" },
+              { value: "circle", label: "Círculo" },
+            ]}
+          />
+          <FormSelector
+            label="Escolha a unidade de medida:"
+            value={selectedUnit}
+            onChange={setSelectedUnit}
+            options={[
+              { value: "mm", label: "mm" },
+              { value: "cm", label: "cm" },
+              { value: "m", label: "m" },
+              { value: "km", label: "km" },
+            ]}
+          />
+          <div className={styles.inputGroup}>{renderInputs[selectedShape]}</div>
+          <div className={styles.results}>
+            <h2 className={styles.resultTitle}>Resultados:</h2>
+            <p className={styles.resultText}>
+              Área:{" "}
+              <span className={styles.resultValue}>{area.toFixed(2)}</span>{" "}
+              {selectedUnit}²
+            </p>
+            <p className={styles.resultText}>
+              Perímetro:{" "}
+              <span className={styles.resultValue}>{perimeter.toFixed(2)}</span>{" "}
+              {selectedUnit}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

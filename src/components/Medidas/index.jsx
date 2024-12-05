@@ -4,44 +4,77 @@ import styles from "./Medidas.module.css";
 function Medidas() {
   const [kilometers, setKilometers] = useState({ value: 1, original: 1 });
   const [meters, setMeters] = useState({ value: 1000, original: 1000 });
-  const [centimeters, setCentimeters] = useState({ value: 100000, original: 100000 });
-  const [millimeters, setMillimeters] = useState({ value: 1000000, original: 1000000 });
+  const [centimeters, setCentimeters] = useState({
+    value: 100000,
+    original: 100000,
+  });
+  const [millimeters, setMillimeters] = useState({
+    value: 1000000,
+    original: 1000000,
+  });
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleKilometersChange = (e) => {
     const value = e.target.value;
     const v = value === "" ? "" : parseFloat(value);
     setKilometers({ ...kilometers, value: v });
-    setMeters({ ...meters, value: v === "" ? "" : v * 1000 });
-    setCentimeters({ ...centimeters, value: v === "" ? "" : v * 100000 });
-    setMillimeters({ ...millimeters, value: v === "" ? "" : v * 1000000 });
+    setMeters({ ...meters, value: v === "" ? "" : (v * 1000).toFixed(2) });
+    setCentimeters({
+      ...centimeters,
+      value: v === "" ? "" : (v * 100000).toFixed(2),
+    });
+    setMillimeters({
+      ...millimeters,
+      value: v === "" ? "" : (v * 1000000).toFixed(2),
+    });
   };
 
   const handleMetersChange = (e) => {
     const value = e.target.value;
     const v = value === "" ? "" : parseFloat(value);
     setMeters({ ...meters, value: v });
-    setKilometers({ ...kilometers, value: v === "" ? "" : v / 1000 });
-    setCentimeters({ ...centimeters, value: v === "" ? "" : v * 100 });
-    setMillimeters({ ...millimeters, value: v === "" ? "" : v * 1000 });
+    setKilometers({
+      ...kilometers,
+      value: v === "" ? "" : (v / 1000).toFixed(2),
+    });
+    setCentimeters({
+      ...centimeters,
+      value: v === "" ? "" : (v * 100).toFixed(2),
+    });
+    setMillimeters({
+      ...millimeters,
+      value: v === "" ? "" : (v * 1000).toFixed(2),
+    });
   };
 
   const handleCentimetersChange = (e) => {
     const value = e.target.value;
     const v = value === "" ? "" : parseFloat(value);
     setCentimeters({ ...centimeters, value: v });
-    setKilometers({ ...kilometers, value: v === "" ? "" : v / 100000 });
-    setMeters({ ...meters, value: v === "" ? "" : v / 100 });
-    setMillimeters({ ...millimeters, value: v === "" ? "" : v * 10 });
+    setKilometers({
+      ...kilometers,
+      value: v === "" ? "" : (v / 100000).toFixed(2),
+    });
+    setMeters({ ...meters, value: v === "" ? "" : (v / 100).toFixed(2) });
+    setMillimeters({
+      ...millimeters,
+      value: v === "" ? "" : (v * 10).toFixed(2),
+    });
   };
 
   const handleMillimetersChange = (e) => {
     const value = e.target.value;
     const v = value === "" ? "" : parseFloat(value);
     setMillimeters({ ...millimeters, value: v });
-    setKilometers({ ...kilometers, value: v === "" ? "" : v / 1000000 });
-    setMeters({ ...meters, value: v === "" ? "" : v / 1000 });
-    setCentimeters({ ...centimeters, value: v === "" ? "" : v / 10 });
+    setKilometers({
+      ...kilometers,
+      value: v === "" ? "" : (v / 1000000).toFixed(2),
+    });
+    setMeters({ ...meters, value: v === "" ? "" : (v / 1000).toFixed(2) });
+    setCentimeters({
+      ...centimeters,
+      value: v === "" ? "" : (v / 10).toFixed(2),
+    });
   };
 
   const handleFocus = (setter) => () => {

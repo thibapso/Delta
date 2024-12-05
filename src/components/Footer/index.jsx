@@ -42,7 +42,7 @@ function Footer() {
               <a href="https://www.linkedin.com/in/thibapso/" target="_blank"><box-icon name="linkedin" type="logo" color="#1e1e1e"></box-icon></a>
               <a href="https://github.com/thibapso" target="_blank"><box-icon name="github" type="logo" color="#1e1e1e"></box-icon></a>
               <a href="https://www.behance.net/thibapso" target="_blank"><box-icon name="behance" type="logo" color="#1e1e1e"></box-icon></a>
-              <a href="https://www.instagram.com/th_bapsoares/" target="_blank"><box-icon name="instagram" type="logo" color="#1e1e1e"></box-icon></a>
+              <a href="https://www.instagram.com/thibapso/" target="_blank"><box-icon name="instagram" type="logo" color="#1e1e1e"></box-icon></a>
             </div>
           </div>
         </div>
