@@ -1,10 +1,16 @@
-/* Estilos gerais */
-.shapesContainer {
+.container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  background-color: #f8f9fa;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.containerPrincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .card {
@@ -13,7 +19,6 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,7 +27,7 @@
 .title {
   font-size: 2rem;
   font-weight: 600;
-  color: #007bff;
+  color: #ef4444;
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -47,11 +52,6 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
-}
-
-.select:focus,
-.input:focus {
-  border-color: #007bff;
 }
 
 .inputGroup {
@@ -82,7 +82,7 @@
 
 .resultValue {
   font-weight: bold;
-  color: #007bff;
+  color: #ef4444;
 }
 
 @media (max-width: 600px) {
