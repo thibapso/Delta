@@ -29,15 +29,16 @@
   border-radius: 8px;
 }
 
-#form {
+#form,
+form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-#title {
-  font-size: 2.25rem;
-  position: relative;
+.title {
+  font-size: 1.85rem;
+  letter-spacing: 0.25rem;
 }
 
 #title::after {
@@ -110,8 +111,10 @@
 
 .calculate:hover,
 .calculate:focus {
-  background-color: #15803d; /* Slightly darker green on hover/focus */
-  transform: scale(1.05); /* Slightly enlarges the button */
+  background-color: #15803d;
+  /* Slightly darker green on hover/focus */
+  transform: scale(1.05);
+  /* Slightly enlarges the button */
 }
 
 
@@ -123,6 +126,13 @@ button {
   text-decoration: none;
   padding: 0;
   margin: 0;
+  width: 25rem;
+  height: 3rem;
+  border-radius: 5px;
+  color: #f8fafc;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
 }
 
 #result {

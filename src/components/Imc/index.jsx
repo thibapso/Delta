@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import styles from './Imc.module.css'; // Importação correta do CSS module
-import IMGHalter from '../../assets/halter.png';
+import { useState } from "react";
+import styles from "./Imc.module.css"; // Importação correta do CSS module
+import IMGHalter from "../../assets/halter.png";
 
 function Imc() {
-  const [weight, setWeight] = useState('');
-  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState("");
+  const [height, setHeight] = useState("");
   const [bmi, setBmi] = useState(null);
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState("");
   const [showInfo, setShowInfo] = useState(false);
 
   const handleCalculate = (e) => {
@@ -19,20 +19,30 @@ function Imc() {
       const bmiValue = (weightValue / (heightValue * heightValue)).toFixed(2);
       setBmi(bmiValue);
 
-      let desc = '';
+      let desc = "";
       if (bmiValue < 18.5) {
-        desc = 'Abaixo do peso';
+        desc = "Abaixo do peso";
       } else if (bmiValue < 24.9) {
-        desc = 'Peso normal';
+        desc = "Peso normal";
       } else if (bmiValue < 29.9) {
-        desc = 'Sobrepeso';
+        desc = "Sobrepeso";
       } else {
-        desc = 'Obesidade';
+        desc = "Obesidade";
       }
       setDescription(desc);
       setShowInfo(true);
     } else {
       setShowInfo(false);
+    }
+  };
+
+  const getBmiClass = (bmi) => {
+    if (bmi < 18.5) {
+      return styles.attention; // Cor de alerta para abaixo do peso
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+      return styles.normal; // Cor normal para peso ideal
+    } else {
+      return styles.attention; // Cor de alerta para sobrepeso e obesidade
     }
   };
 
@@ -47,7 +57,9 @@ function Imc() {
         </div>
         <div className={styles.imcForms}>
           <form id="form" onSubmit={handleCalculate}>
-            <h1 id="title">Calculadora - IMC</h1>
+            <h1 className={styles.title} id="title">
+              Calculadora - IMC
+            </h1>
 
             <div className={styles.inputBox}>
               <label htmlFor="weight">Peso em quilograma (kg)</label>
@@ -83,14 +95,18 @@ function Imc() {
               </div>
             </div>
 
-            <button id="calculate" type="submit">Calcular</button>
+            <button id="calculate" type="submit">
+              Calcular
+            </button>
           </form>
 
           {showInfo && (
             <div id="infos">
               <div id="result">
                 <div id="bmi">
-                  <span id="value">{bmi}</span>
+                  <span id="value" className={getBmiClass(bmi)}>
+                    {bmi}
+                  </span>
                   <span>Seu IMC</span>
                 </div>
                 <div id="description">
@@ -99,7 +115,11 @@ function Imc() {
               </div>
 
               <div id="more_info">
-                <a href="https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Mais informações sobre o IMC
                   <i className="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
