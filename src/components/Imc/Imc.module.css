@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   gap: 3.5rem;
+  padding-top: 1.5rem;
 }
 
 .imcHalter img {
@@ -37,8 +38,8 @@ form {
 }
 
 .title {
-  font-size: 1.85rem;
-  letter-spacing: 0.25rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
 }
 
 #title::after {
@@ -112,11 +113,8 @@ form {
 .calculate:hover,
 .calculate:focus {
   background-color: #15803d;
-  /* Slightly darker green on hover/focus */
   transform: scale(1.05);
-  /* Slightly enlarges the button */
 }
-
 
 button {
   background-color: #16a34a;
@@ -133,6 +131,40 @@ button {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover,
+button:focus {
+  background-color: #15803d;
+}
+
+.infos {
+  border-top: 1px solid #ffffff34;
+  padding: 0.75rem 0;
+}
+
+.bmi {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bmi span:first-child {
+  font-size: 2.25rem;
+}
+
+.bmi span:last-child {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.85rem 0 1rem 0;
 }
 
 #result {
@@ -157,6 +189,35 @@ button {
 
 #description {
   width: 15.5rem;
+}
+
+.more_info {
+  border-top: 1px solid #ffffff34;
+  padding-top: 1.5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #16a34a;
+  transition: color 0.5s ease-in-out, transform 0.3s ease-in-out;
+
+}
+
+.more_info a {
+  color: #16a34a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.5s ease-in-out, transform 0.3s ease-in-out;
+
+}
+
+.more_info:hover,
+.more_info a:hover {
+  color: #4ade80;
 }
 
 #more_info {
@@ -198,15 +259,50 @@ button {
 }
 
 @media screen and (max-width: 500px) {
-  .imcContent {
-    width: 100%;
-    height: 100%;
-  }
-
   .imcForms {
     width: 100%;
     height: 100%;
-    border-radius: 0;
     justify-content: center;
+    padding: 1rem;
+  }
+
+  .inputField {
+    align-items: stretch;
+  }
+
+  .inputField span,
+  .inputField i {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .inputField input {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    height: 2.5rem;
+  }
+
+  .result {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .inputBox label {
+    font-size: 0.75rem;
+    white-space: nowrap;
   }
 }

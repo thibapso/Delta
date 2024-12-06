@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from "./Imc.module.css"; // Importação correta do CSS module
+import styles from "./Imc.module.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import IMGHalter from "../../assets/halter.png";
 
 function Imc() {
@@ -21,13 +22,13 @@ function Imc() {
 
       let desc = "";
       if (bmiValue < 18.5) {
-        desc = "Abaixo do peso";
+        desc = "Cuidado! Você está abaixo do peso";
       } else if (bmiValue < 24.9) {
         desc = "Peso normal";
       } else if (bmiValue < 29.9) {
-        desc = "Sobrepeso";
+        desc = "Cuidado! Você está com sobrepeso";
       } else {
-        desc = "Obesidade";
+        desc = "Cuidado! Você está com obesidade";
       }
       setDescription(desc);
       setShowInfo(true);
@@ -38,11 +39,11 @@ function Imc() {
 
   const getBmiClass = (bmi) => {
     if (bmi < 18.5) {
-      return styles.attention; // Cor de alerta para abaixo do peso
+      return styles.attention; 
     } else if (bmi >= 18.5 && bmi <= 24.9) {
-      return styles.normal; // Cor normal para peso ideal
+      return styles.normal;
     } else {
-      return styles.attention; // Cor de alerta para sobrepeso e obesidade
+      return styles.attention; 
     }
   };
 
@@ -58,7 +59,7 @@ function Imc() {
         <div className={styles.imcForms}>
           <form id="form" onSubmit={handleCalculate}>
             <h1 className={styles.title} id="title">
-              Calculadora - IMC
+              Calculadora IMC
             </h1>
 
             <div className={styles.inputBox}>
@@ -101,9 +102,9 @@ function Imc() {
           </form>
 
           {showInfo && (
-            <div id="infos">
-              <div id="result">
-                <div id="bmi">
+            <div className={styles.infos} id="infos">
+              <div className={styles.result} id="result">
+                <div className={styles.bmi} id="bmi">
                   <span id="value" className={getBmiClass(bmi)}>
                     {bmi}
                   </span>
@@ -114,15 +115,15 @@ function Imc() {
                 </div>
               </div>
 
-              <div id="more_info">
+              <div className={styles.more_info} id="more_info">
                 <a
                   href="https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Mais informações sobre o IMC
-                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </div>
             </div>
           )}
