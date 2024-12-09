@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Slogan from "./components/Slogan";
 import Descubra from "./components/Descubra";
-import Moedas from "./components/Moedas";
+import Pace from "./components/Pace";
 import Imc from "./components/Imc";
 import Medidas from "./components/Medidas";
 import Temperatura from "./components/Temperatura";
@@ -63,7 +63,7 @@ function App() {
       <Slogan />
       <Descubra />
       <div className="fundo__verde">
-        <Moedas />
+        <Pace />
         <hr className="divider" />
         <Imc />
       </div>

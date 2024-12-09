@@ -46,11 +46,11 @@ function Header() {
             <ul>
               <li>
                 <a
-                  href="#moedas"
+                  href="#pace"
                   className={styles.navLink}
                   onClick={closeMenu}
                 >
-                  Moedas
+                  Pace
                 </a>
               </li>
               <li>

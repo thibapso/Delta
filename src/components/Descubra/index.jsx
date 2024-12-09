@@ -15,7 +15,7 @@ function Descubra() {
           <div className={styles.Tag}>
             <ul>
               <li>
-                <a href="#moedas">Moedas</a>
+                <a href="#pace">Pace</a>
               </li>
               <li>
                 <a href="#imc">IMC</a>
@@ -23,11 +23,11 @@ function Descubra() {
             </ul>
           </div>
           <p className={styles.Cards__Paragrafo}>
-          Material para saúde e finanças: <span>conversor de moedas</span> para
-            transações e <span>calculadora de IMC</span> para o vigor.
+          Material para saúde e finanças: <span>calculadora de Pace</span> para
+            corredores e <span>calculadora de IMC</span> para o vigor.
           </p>
           <div className={styles.Cards__Button}>
-            <a href="#moedas">Começar</a>
+            <a href="#pace">Começar</a>
           </div>
         </div>
 

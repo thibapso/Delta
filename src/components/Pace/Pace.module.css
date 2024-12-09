@@ -1,0 +1,203 @@
+.pace {
+    padding: 3rem 0;
+}
+
+/* Título centralizado */
+.paceTitle {
+    text-align: center;
+    color: #1E1E1E;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Container de Cards */
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilo de Cards */
+.card {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 500px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título dos Cards */
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilo de Labels */
+label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #444;
+    display: block;
+    margin-top: 12px;
+}
+
+/* Estilo de Inputs */
+input {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Foco no Input */
+input:focus {
+    border: 2px solid #007bff;
+    outline: none;
+}
+
+/* Estilo para o Placeholder */
+input::placeholder {
+    color: #888;
+    font-size: 14px;
+    opacity: 1;
+}
+
+.inlineInputs {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Inputs lado a lado */
+.inlineInputs input {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* Botão de Calcular */
+button {
+    margin-top: auto;
+    padding: 16px 24px;
+    font-size: 18px;
+    color: white;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 380px;
+    align-self: center;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Resultado */
+.result {
+    margin-top: 32px;
+    padding: 20px;
+    font-size: 20px;
+    color: #333;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    /* Faz o resultado ocupar a largura total disponível */
+    max-width: 600px;
+    /* Limita a largura máxima para se alinhar com os cards */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Efeito de hover no resultado (opcional) */
+.result:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    /* Aumenta a sombra ao passar o mouse */
+    background: #e1f0ff;
+    /* Cor de fundo mais clara para hover */
+}
+
+
+/* Responsividade para Telas Grandes */
+@media (min-width: 1024px) {
+    .cardsContainer {
+        flex-direction: row;
+        gap: 48px;
+        width: 70%;
+    }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 540px) {
+    .inlineInputs {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .inlineInputs input {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 500px) {
+    .cardsContainer {
+        width: 90%;
+        padding: 16px;
+    }
+
+    .card {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    button {
+        max-width: 320px;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Ajustes para telas extra grandes */
+@media (min-width: 1440px) {
+    .cardsContainer {
+        width: 60%;
+    }
+
+    .card {
+        max-width: 700px;
+    }
+}
