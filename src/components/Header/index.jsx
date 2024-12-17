@@ -11,6 +11,11 @@ function Header() {
     navRef.current.classList.toggle(styles.responsive_nav);
   };
 
+  const closeNavbar = () => {
+    setIsNavbarVisible(false); // Fecha a navbar
+    navRef.current.classList.remove(styles.responsive_nav); // Remove a classe de estilo de navbar visível
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
@@ -18,11 +23,21 @@ function Header() {
           <a href="#slogan">&lt; Delta &gt;</a>
         </h3>
         <nav ref={navRef} className={styles.nav}>
-          <a href="#pace">Pace</a>
-          <a href="#imc">IMC</a>
-          <a href="#medidas">Medidas</a>
-          <a href="#temperatura">Temperatura</a>
-          <a href="#formas">Formas</a>
+          <a href="#pace" onClick={closeNavbar}>
+            Pace
+          </a>
+          <a href="#imc" onClick={closeNavbar}>
+            IMC
+          </a>
+          <a href="#medidas" onClick={closeNavbar}>
+            Medidas
+          </a>
+          <a href="#temperatura" onClick={closeNavbar}>
+            Temperatura
+          </a>
+          <a href="#formas" onClick={closeNavbar}>
+            Formas
+          </a>
 
           <button
             className={`${styles.navBtn} ${styles.navCloseBtn} ${

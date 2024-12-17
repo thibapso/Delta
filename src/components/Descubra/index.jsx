@@ -1,4 +1,5 @@
 import styles from "./Descubra.module.css";
+import classNames from 'classnames';
 
 function Descubra() {
   return (
@@ -12,7 +13,7 @@ function Descubra() {
             <i className="material-icons-outlined">spa</i>
           </div>
           <h2>Bem-estar</h2>
-          <div className={styles.Tag}>
+          <div className={`${styles.Tag} bemestar`}>
             <ul>
               <li>
                 <a href="#pace">Pace</a>
@@ -23,8 +24,8 @@ function Descubra() {
             </ul>
           </div>
           <p className={styles.Cards__Paragrafo}>
-          Material para saúde e finanças: <span>calculadora de Pace</span> para
-            corredores e <span>calculadora de IMC</span> para o vigor.
+            Material para saúde e finanças: <span>calculadora de Pace</span>{" "}
+            para corredores e <span>calculadora de IMC</span> para o vigor.
           </p>
           <div className={styles.Cards__Button}>
             <a href="#pace">Começar</a>
@@ -36,7 +37,7 @@ function Descubra() {
             <i className="material-icons-outlined">air</i>
           </div>
           <h2>Física</h2>
-          <div className={styles.Tag}>
+          <div className={`${styles.Tag} fisica`}>
             <ul>
               <li>
                 <a href="#medidas">Medidas</a>
@@ -47,8 +48,8 @@ function Descubra() {
             </ul>
           </div>
           <p className={styles.Cards__Paragrafo}>
-            Conversores práticos: <span>medidas</span> para calcular e <span>temperatura</span> para
-            diferentes condições climáticas.
+            Conversores práticos: <span>medidas</span> para calcular e{" "}
+            <span>temperatura</span> para diferentes condições climáticas.
           </p>
           <div className={styles.Cards__Button}>
             <a href="#medidas">Começar</a>
@@ -60,7 +61,7 @@ function Descubra() {
             <i className="material-icons-outlined">category</i>
           </div>
           <h2>Geometria</h2>
-          <div className={styles.Tag}>
+          <div className={`${styles.Tag} geometria`}>
             <ul>
               <li>
                 <a href="#formas">Formas</a>
@@ -68,7 +69,9 @@ function Descubra() {
             </ul>
           </div>
           <p className={styles.Cards__Paragrafo}>
-            Ferramenta para cálculos geométricos: <span>calculadora de formas</span> para encontrar perímetros e áreas.
+            Ferramenta para cálculos geométricos:{" "}
+            <span>calculadora de formas</span> para encontrar perímetros e
+            áreas.
           </p>
           <div className={styles.Cards__Button}>
             <a href="#formas">Começar</a>

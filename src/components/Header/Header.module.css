@@ -110,14 +110,14 @@ h3 a:hover {
   font-weight: 500;
 }
 
-@media (min-width: 770px) {
+@media (min-width: 790px) {
   .navBtn {
     display: none;
   }
 }
 
 /* Responsivo */
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 790px) {
   .headerContent {
     width: 100%;
   }

@@ -162,6 +162,7 @@ div ul {
   background-color: rgba(239, 68, 68, 0.7);
 }
 
+.bemestar ul li a:hover,
 .Cards__BemEstar .iconWrapper,
 .Cards__BemEstar .Cards__Button:hover {
   background-color: rgba(16, 185, 129, 1);
@@ -169,12 +170,14 @@ div ul {
   transition: background-color 0.5s;
 }
 
+.fisica ul li a:hover,
 .Cards__Fisica .iconWrapper,
 .Cards__Fisica .Cards__Button:hover {
   background-color: rgba(129, 140, 248, 1);
   transition: background-color 0.5s;
 }
 
+.geometria ul li a:hover,
 .Cards__Geometria .iconWrapper,
 .Cards__Geometria .Cards__Button:hover {
   background-color: rgba(239, 68, 68, 1);
@@ -218,5 +221,11 @@ div ul {
   .descubraCards {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .descubraTitle {
+    font-size: 1.5rem;
   }
 }

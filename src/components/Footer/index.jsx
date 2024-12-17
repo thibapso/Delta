@@ -25,10 +25,10 @@ function Footer() {
             <h4>Navegação</h4>
             <ul>
               <li>
-                <a href="#">Início</a>
+                <a href="#slogan">Início</a>
               </li>
               <li>
-                <a href="#moedas">Moedas</a>
+                <a href="#pace">Pace</a>
               </li>
               <li>
                 <a href="#imc">IMC</a>
