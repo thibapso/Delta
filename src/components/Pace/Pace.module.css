@@ -1,203 +1,257 @@
 .pace {
-    padding: 3rem 0;
+    padding: 48px;
 }
 
-/* Título centralizado */
 .paceTitle {
     text-align: center;
-    color: #1E1E1E;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
+    font-size: 24px;
+    color: #1e1e1e;
 }
 
-/* Container de Cards */
-.cardsContainer {
+.paceContent {
     display: flex;
-    flex-direction: column;
-    gap: 32px;
-    justify-content: center;
     align-items: center;
-    width: 80%;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 1.5rem;
 }
 
-/* Estilo de Cards */
-.card {
-    background: white;
-    padding: 32px;
-    border-radius: 12px;
+.paceImage img {
+    width: 32rem;
+}
+
+.paceForm {
+    background-color: #1e1e1e;
+    color: #f8fafc;
+    padding: 2rem;
+    border-radius: 8px;
     width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+}
+
+.inputBox label {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.inputField {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-    min-height: 500px;
-    transition: all 0.3s ease-in-out;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3f3f46;
+    padding: 0.3rem;
+    border-radius: 3px;
+    margin-top: 3px;
 }
 
-.card:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
-/* Título dos Cards */
-.card h3 {
-    font-size: 19px;
-    margin-bottom: 12px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
+.inputField span,
+.inputField i {
+    color: #cbd5e1;
+    font-size: 1.3rem;
+    padding: 0.6rem 1rem;
 }
 
-/* Estilo de Labels */
-label {
-    font-weight: bold;
-    font-size: 18px;
-    color: #444;
-    display: block;
-    margin-top: 12px;
-}
-
-/* Estilo de Inputs */
-input {
+.inputField input {
+    background-color: transparent;
+    border: none;
     width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-top: 6px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    font-size: 1rem;
+    color: #f8fafc;
+    padding: 0.6rem 1rem;
 }
 
-/* Foco no Input */
-input:focus {
-    border: 2px solid #007bff;
+.inputField input::-webkit-outer-spin-button,
+.inputField input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.inputField input:focus {
     outline: none;
-}
-
-/* Estilo para o Placeholder */
-input::placeholder {
-    color: #888;
-    font-size: 14px;
-    opacity: 1;
 }
 
 .inlineInputs {
     display: flex;
-    gap: 12px;
-    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    height: 3rem;
 }
 
-/* Inputs lado a lado */
+.timeInputWrapper {
+    display: flex;
+    align-items: center;
+}
+
 .inlineInputs input {
-    flex: 1;
-    min-width: 120px;
+    width: 30%;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin-right: 0;
+    border-radius: 5px;
+    background-color: #3f3f46;
+    color: #fff;
 }
 
-/* Botão de Calcular */
+.inlineInputs input:focus {
+    outline: none;
+}
+
+.inlineInputs input:focus,
+.inlineInputs input {
+    border-right: none;
+    border-bottom: none;
+}
+
+.inlineInputs input::-webkit-outer-spin-button,
+.inlineInputs input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inlineInputs input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.timeLabel {
+    font-size: 1.25rem;
+    margin-left: 5px;
+    color: #fff;
+}
+
 button {
-    margin-top: auto;
-    padding: 16px 24px;
-    font-size: 18px;
-    color: white;
-    background: #007bff;
+    background-color: #16a34a;
     border: none;
-    border-radius: 8px;
+    box-shadow: none;
+    outline: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    color: #f8fafc;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
     cursor: pointer;
-    width: 100%;
-    max-width: 380px;
-    align-self: center;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button:hover {
-    background: #0056b3;
+button:hover,
+button:focus {
+    background-color: #15803d;
 }
 
-/* Resultado */
 .result {
-    margin-top: 32px;
-    padding: 20px;
-    font-size: 20px;
-    color: #333;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
     text-align: center;
-    width: 100%;
-    /* Faz o resultado ocupar a largura total disponível */
-    max-width: 600px;
-    /* Limita a largura máxima para se alinhar com os cards */
-    margin-left: auto;
-    margin-right: auto;
+    color: #f8fafc;
 }
 
-
-/* Efeito de hover no resultado (opcional) */
-.result:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    /* Aumenta a sombra ao passar o mouse */
-    background: #e1f0ff;
-    /* Cor de fundo mais clara para hover */
+.paceDetails {
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    background-color: #1e1e1e;
+    backdrop-filter: blur(1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(1px);
 }
 
+.more_info {
+    padding: 2rem 0 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #16a34a;
+    transition: color 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
 
-/* Responsividade para Telas Grandes */
-@media (min-width: 1024px) {
-    .cardsContainer {
-        flex-direction: row;
-        gap: 48px;
-        width: 70%;
+.more_info a {
+    color: #16a34a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.more_info:hover,
+.more_info a:hover {
+    color: #4ade80;
+}
+
+#more_info {
+    padding-top: 1.5rem;
+}
+
+#more_info a {
+    color: #16a34a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+#more_info a:hover {
+    color: #cbd5e1;
+}
+
+/* Media Queries Ajustadas para Responsividade */
+@media screen and (max-width: 1024px) {
+    .paceImage {
+        display: none;
     }
-}
 
-/* Responsividade para telas pequenas */
-@media (max-width: 540px) {
     .inlineInputs {
+        padding: 7rem 0 6rem;
+        display: flex;
         flex-direction: column;
-        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 3rem;
     }
 
     .inlineInputs input {
-        flex: none;
         width: 100%;
     }
 }
 
-/* Ajustes para telas muito pequenas */
-@media (max-width: 500px) {
-    .cardsContainer {
-        width: 90%;
-        padding: 16px;
-    }
-
-    .card {
-        padding: 20px;
-        min-height: auto;
-    }
-
-    input {
-        font-size: 16px;
+@media screen and (max-width: 500px) {
+    .paceForm {
+        padding: 1rem;
     }
 
     button {
-        max-width: 320px;
-        padding: 14px 20px;
-        font-size: 16px;
+        width: 100%;
+        font-size: 1rem;
+        height: 2.5rem;
+    }
+
+    .inputField span,
+    .inputField i {
+        padding: 0.5rem 0;
+        font-size: 1rem;
     }
 }
 
-/* Ajustes para telas extra grandes */
-@media (min-width: 1440px) {
-    .cardsContainer {
-        width: 60%;
-    }
 
-    .card {
-        max-width: 700px;
+@media screen and (max-width: 375px) {
+    .title {
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
 }

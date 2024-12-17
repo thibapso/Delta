@@ -1,41 +1,38 @@
 import { useState } from "react";
 import styles from "./Pace.module.css";
+import IMGRunning from "../../assets/running.png"; // Imagem da corrida
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Para utilizar ícones do FontAwesome
 
 function Pace() {
   const [distance, setDistance] = useState("");
-  const [paceMin, setPaceMin] = useState("");
-  const [paceSec, setPaceSec] = useState("");
   const [timeHours, setTimeHours] = useState("");
   const [timeMin, setTimeMin] = useState("");
   const [timeSec, setTimeSec] = useState("");
   const [result, setResult] = useState("");
+  const [showResult, setShowResult] = useState(false); // Variável para controlar se o resultado será mostrado
 
-  const handleFocus = (setter) => () => setter("");
-
-  const calculateTimeAndSpeed = () => {
-    const totalPaceSec = parseInt(paceMin) * 60 + parseInt(paceSec);
-    const totalSec = totalPaceSec * parseFloat(distance);
-    const hours = Math.floor(totalSec / 3600);
-    const minutes = Math.floor((totalSec % 3600) / 60);
-    const seconds = Math.floor(totalSec % 60);
-    const speed = (distance / (totalSec / 3600)).toFixed(2);
-
-    setResult(
-      `Tempo Total: ${hours}h ${minutes}m ${seconds}s | Velocidade Média: ${speed} km/h`
-    );
-  };
-
-  const calculatePaceAndSpeed = () => {
+  const calculate = () => {
     const totalSec =
-      parseInt(timeHours) * 3600 + parseInt(timeMin) * 60 + parseInt(timeSec);
-    const paceSec = totalSec / parseFloat(distance);
-    const paceMinutes = Math.floor(paceSec / 60);
-    const paceSeconds = Math.floor(paceSec % 60);
-    const speed = (distance / (totalSec / 3600)).toFixed(2);
+      parseInt(timeHours || 0) * 3600 +
+      parseInt(timeMin || 0) * 60 +
+      parseInt(timeSec || 0);
 
-    setResult(
-      `Pace: ${paceMinutes}m ${paceSeconds}s/km | Velocidade Média: ${speed} km/h`
-    );
+    if (distance && totalSec) {
+      const paceSec = totalSec / parseFloat(distance);
+      const paceMinutes = Math.floor(paceSec / 60);
+      const paceSeconds = Math.floor(paceSec % 60);
+      const speed = (distance / (totalSec / 3600)).toFixed(2);
+
+      // Armazenar Pace e Velocidade Média separadamente
+      setResult({
+        pace: `Pace: ${paceMinutes}m ${paceSeconds}s/km`,
+        speed: `Velocidade Média: ${speed} km/h`,
+      });
+      setShowResult(true);
+    } else {
+      setResult("Por favor, preencha todos os campos necessários.");
+      setShowResult(false);
+    }
   };
 
   return (
@@ -43,93 +40,91 @@ function Pace() {
       <div className={styles.paceTitle}>
         <h2>Calculadora de Pace</h2>
       </div>
-
-      <div className={styles.cardsContainer}>
-        {/* Card 1: Calcular Tempo e Velocidade */}
-        <div className={styles.card}>
-          <h3>Calcular Tempo Total e Velocidade Média</h3>
-          <label>Distância (km):</label>
-          <input
-            type="number"
-            value={distance}
-            onFocus={handleFocus(setDistance)}
-            onChange={(e) => setDistance(e.target.value)}
+      <div className={styles.paceContent}>
+        <div className={styles.paceImage}>
+          <img
+            src={IMGRunning}
+            alt="Correndo"
+            className={styles.runningImage}
           />
-
-          <label>Pace (min/km):</label>
-          <div className={styles.inlineInputs}>
-            <input
-              type="number"
-              value={paceMin}
-              onFocus={handleFocus(setPaceMin)}
-              onChange={(e) => setPaceMin(e.target.value)}
-              placeholder="Min"
-            />
-            <input
-              type="number"
-              value={paceSec}
-              onFocus={handleFocus(setPaceSec)}
-              onChange={(e) => setPaceSec(e.target.value)}
-              placeholder="Seg"
-            />
-          </div>
-
-          <button
-            className={styles.botao}
-            type="button"
-            onClick={calculateTimeAndSpeed}
-          >
-            Calcular
-          </button>
         </div>
+        <div className={styles.paceForm}>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <h1 className={styles.title} id="title">
+              Calculadora Pace
+            </h1>
+            <div className={styles.inputBox}>
+              <label htmlFor="distance">Distância (km)</label>
+              <div className={styles.inputField}>
+                <i className="fa-solid fa-shoe-prints"></i>
+                <input
+                  type="number"
+                  id="distance"
+                  value={distance}
+                  onChange={(e) => setDistance(e.target.value)}
+                  required
+                />
+                <span>km</span>
+              </div>
+            </div>
 
-        {/* Card 2: Calcular Pace e Velocidade */}
-        <div className={styles.card}>
-          <h3>Calcular Pace e Velocidade Média</h3>
-          <label>Distância (km):</label>
-          <input
-            type="number"
-            value={distance}
-            onFocus={handleFocus(setDistance)}
-            onChange={(e) => setDistance(e.target.value)}
-          />
+            <div className={styles.inputBox}>
+              <label>Tempo Total (h/m/s)</label>
+              <div className={styles.inlineInputs}>
+                <input
+                  type="number"
+                  value={timeHours}
+                  onChange={(e) => setTimeHours(e.target.value)}
+                  placeholder="H"
+                  min="0"
+                  max="23" // Limita as horas de 0 a 23
+                  required
+                />
+                <input
+                  type="number"
+                  value={timeMin}
+                  onChange={(e) => setTimeMin(e.target.value)}
+                  placeholder="M"
+                  min="0"
+                  max="59" // Limita os minutos de 0 a 59
+                  required
+                />
+                <input
+                  type="number"
+                  value={timeSec}
+                  onChange={(e) => setTimeSec(e.target.value)}
+                  placeholder="S"
+                  min="0"
+                  max="59" // Limita os segundos de 0 a 59
+                  required
+                />
+              </div>
+            </div>
 
-          <label>Tempo Total:</label>
-          <div className={styles.inlineInputs}>
-            <input
-              type="number"
-              value={timeHours}
-              onFocus={handleFocus(setTimeHours)}
-              onChange={(e) => setTimeHours(e.target.value)}
-              placeholder="Hs"
-            />
-            <input
-              type="number"
-              value={timeMin}
-              onFocus={handleFocus(setTimeMin)}
-              onChange={(e) => setTimeMin(e.target.value)}
-              placeholder="Min"
-            />
-            <input
-              type="number"
-              value={timeSec}
-              onFocus={handleFocus(setTimeSec)}
-              onChange={(e) => setTimeSec(e.target.value)}
-              placeholder="Seg"
-            />
-          </div>
+            <button onClick={calculate}>Calcular</button>
+          </form>
 
-          <button
-            className={styles.botao}
-            type="button"
-            onClick={calculatePaceAndSpeed}
-          >
-            Calcular
-          </button>
+          {showResult && (
+            <div className={styles.result}>
+              <div className={styles.paceDetails}>
+                <span>{result.pace}</span>
+                <br />
+                <span>{result.speed}</span>
+              </div>
+              <div className={styles.more_info} id="more_info">
+                <a
+                  href="https://www.atletis.com.br/o-que-e-pace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Mais informações sobre o IMC
+                </a>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-
-      {result && <div className={styles.result}>{result}</div>}
     </section>
   );
 }
