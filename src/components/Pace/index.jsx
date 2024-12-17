@@ -38,7 +38,7 @@ function Pace() {
   return (
     <section id="pace" className={styles.pace}>
       <div className={styles.paceTitle}>
-        <h2>Calculadora de Pace</h2>
+        <h2 className={styles.CalculadoraTitle}>Calculadora de Pace</h2>
       </div>
       <div className={styles.paceContent}>
         <div className={styles.paceImage}>

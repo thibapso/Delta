@@ -3,9 +3,14 @@
 }
 
 .imcTitle {
-  text-align: center;
   color: #1e1e1e;
   font-size: 24px;
+}
+
+.CalculadoraTitle {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .imcContent {

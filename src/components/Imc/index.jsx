@@ -50,7 +50,7 @@ function Imc() {
   return (
     <section id="imc" className={styles.imc}>
       <div className={styles.imcTitle}>
-        <h2>Calculadora de IMC</h2>
+        <h2 className={styles.CalculadoraTitle}>Calculadora de IMC</h2>
       </div>
       <div className={styles.imcContent}>
         <div className={styles.imcHalter}>
