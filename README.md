@@ -45,6 +45,8 @@
 - **Feedback Visual**: Botões interativos e mudanças de estado claras.
 - **Acessibilidade**: Em conformidade com WCAG, suporte a Libras via VLibras Widget.
 
+> **Nota:** A acessibilidade foi uma prioridade no desenvolvimento do Delta, incluindo suporte a Libras por meio do VLibras Widget.
+
 ---
 
 ## **Como Rodar o Projeto**
