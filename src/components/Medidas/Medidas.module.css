@@ -14,7 +14,6 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  /* Ajustado o espaçamento entre os painéis */
   flex-wrap: wrap;
 }
 
@@ -25,7 +24,6 @@
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
   min-width: 12em;
   width: 17%;
-  /* Ajustado para largura responsiva */
   height: 12em;
   position: relative;
   display: flex;
@@ -37,22 +35,18 @@
 
 .panel:nth-child(1) {
   background: rgba(63, 53, 184, 0.88);
-  /* lilás */
 }
 
 .panel:nth-child(2) {
   background: rgba(63, 52, 207, 0.88);
-  /* lilás claro */
 }
 
 .panel:nth-child(3) {
   background: rgba(67, 56, 202, 0.88);
-  /* lilás ainda mais claro */
 }
 
 .panel:nth-child(4) {
   background: rgba(79, 70, 229, 0.88);
-  /* lilás claro */
 }
 
 .panel:hover {
@@ -82,7 +76,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 8em;
-  /* Diminuído o tamanho da fonte da unidade de medida */
   z-index: 0;
   pointer-events: none;
 }
@@ -137,7 +130,6 @@
 @media (max-width: 1480px) {
   .panel {
     width: 40%;
-    /* Ajustar a largura para 40% para permitir dois cards lado a lado */
   }
 }
 
@@ -148,22 +140,18 @@
 
   .panel {
     width: 45%;
-    /* Ajustar a largura para 45% para telas menores */
   }
 
   .bg__unit {
     font-size: 6.5em;
-    /* Aumentado o tamanho da unidade de medida */
   }
 
   .panel h3 {
     font-size: 1.4em;
-    /* Aumentado o tamanho do título */
   }
 
   .panel input {
     font-size: 1.8em;
-    /* Aumentado o tamanho do input */
   }
 }
 
@@ -174,21 +162,17 @@
 
   .panel {
     width: 90%;
-    /* Ajustar a largura para 90% para telas menores */
   }
 
   .bg__unit {
     font-size: 5em;
-    /* Aumentado o tamanho da unidade */
   }
 
   .panel h3 {
     font-size: 1.2em;
-    /* Aumentado o tamanho do título */
   }
 
   .panel input {
     font-size: 1.4em;
-    /* Aumentado o tamanho do input */
   }
 }

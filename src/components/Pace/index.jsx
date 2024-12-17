@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Pace.module.css";
-import IMGRunning from "../../assets/running.png"; // Imagem da corrida
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Para utilizar ícones do FontAwesome
+import IMGRunning from "../../assets/running.png";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function Pace() {
   const [distance, setDistance] = useState("");
@@ -9,7 +9,7 @@ function Pace() {
   const [timeMin, setTimeMin] = useState("");
   const [timeSec, setTimeSec] = useState("");
   const [result, setResult] = useState("");
-  const [showResult, setShowResult] = useState(false); // Variável para controlar se o resultado será mostrado
+  const [showResult, setShowResult] = useState(false);
 
   const calculate = () => {
     const totalSec =
@@ -23,7 +23,6 @@ function Pace() {
       const paceSeconds = Math.floor(paceSec % 60);
       const speed = (distance / (totalSec / 3600)).toFixed(2);
 
-      // Armazenar Pace e Velocidade Média separadamente
       setResult({
         pace: `Pace: ${paceMinutes}m ${paceSeconds}s/km`,
         speed: `Velocidade Média: ${speed} km/h`,
@@ -77,7 +76,6 @@ function Pace() {
                   onChange={(e) => setTimeHours(e.target.value)}
                   placeholder="H"
                   min="0"
-                  max="23" // Limita as horas de 0 a 23
                   required
                 />
                 <input
@@ -86,7 +84,6 @@ function Pace() {
                   onChange={(e) => setTimeMin(e.target.value)}
                   placeholder="M"
                   min="0"
-                  max="59" // Limita os minutos de 0 a 59
                   required
                 />
                 <input
@@ -95,7 +92,6 @@ function Pace() {
                   onChange={(e) => setTimeSec(e.target.value)}
                   placeholder="S"
                   min="0"
-                  max="59" // Limita os segundos de 0 a 59
                   required
                 />
               </div>

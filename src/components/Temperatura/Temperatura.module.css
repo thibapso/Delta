@@ -95,10 +95,10 @@
 }
 
 .panel h3 {
-  position: absolute; /* Atualizado para posicionamento absoluto */
-  top: 0; /* Alinha ao topo */
-  left: 0; /* Alinha à esquerda */
-  margin: 0.72em; /* Ajusta a margem conforme necessário */
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  margin: 0.72em;
   font-size: 2em;
   color: #ffffff;
 }

@@ -5,31 +5,25 @@
   align-items: center;
   text-align: center;
   padding-top: 1.25rem;
-  /* 20px */
 }
 
 .sloganContent {
   width: 100%;
   max-width: 75rem;
-  /* 1200px */
   padding: 0 1.25rem;
-  /* 20px */
   box-sizing: border-box;
 }
 
 .sloganTitle {
   margin-top: 3.125rem;
-  /* 50px */
 }
 
 .sloganTitle h1 {
   font-size: 2rem;
-  /* 32px */
   font-weight: 700;
   color: #263238;
   width: 100%;
   max-width: 50.44rem;
-  /* 807px */
   margin: 0 auto;
   padding: 1rem 0;
 }
@@ -44,7 +38,6 @@
 
 .sloganProfessor {
   margin-top: 1.25rem;
-  /* 20px */
   width: 100%;
 }
 
@@ -52,34 +45,27 @@
   height: auto;
   width: 100%;
   max-width: 43.75rem;
-  /* 700px */
   max-height: 31.25rem;
-  /* 500px */
 }
 
 @media (max-width: 768px) {
   .sloganTitle h1 {
     font-size: 1.5rem;
-    /* 24px */
   }
 
   .sloganProfessor img {
     max-width: 31.25rem;
-    /* 500px */
     max-height: 25rem;
-    /* 400px */
   }
 }
 
 @media (max-width: 480px) {
   .sloganTitle h1 {
     font-size: 1.25rem;
-    /* 20px */
   }
 
   .sloganProfessor img {
     max-width: 100%;
     max-height: 18.75rem;
-    /* 300px */
   }
 }

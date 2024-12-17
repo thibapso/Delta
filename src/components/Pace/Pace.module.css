@@ -213,7 +213,6 @@ button:focus {
     color: #cbd5e1;
 }
 
-/* Media Queries Ajustadas para Responsividade */
 @media screen and (max-width: 1024px) {
     .paceImage {
         display: none;

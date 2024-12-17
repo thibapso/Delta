@@ -5,7 +5,7 @@
 }
 
 .container {
-  width: 75%; /* Certifique-se de que este valor de largura corresponda ao do header */
+  width: 75%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -14,12 +14,12 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* Espaço entre as colunas */
+  gap: 15px;
 }
 
 ul {
   list-style: none;
-  padding: 0; /* Remove o padding das listas */
+  padding: 0;
 }
 
 .footerLogo {
@@ -50,8 +50,8 @@ ul {
 }
 
 .footerCol {
-  flex: 1; /* Flexível para ocupar o espaço disponível */
-  min-width: 240px; /* Largura mínima para as colunas */
+  flex: 1;
+  min-width: 240px;
   padding: 0 15px;
   margin: 2%;
 }
@@ -102,7 +102,7 @@ ul {
 
 .socialLinks {
   display: flex;
-  gap: 10px; /* Espaço entre os ícones sociais */
+  gap: 10px;
 }
 
 .socialLinks a {
