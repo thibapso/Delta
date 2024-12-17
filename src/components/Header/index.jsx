@@ -7,13 +7,13 @@ function Header() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
 
   const showNavbar = () => {
-    setIsNavbarVisible(!isNavbarVisible); // Alterna o estado da navbar
+    setIsNavbarVisible(!isNavbarVisible);
     navRef.current.classList.toggle(styles.responsive_nav);
   };
 
   const closeNavbar = () => {
-    setIsNavbarVisible(false); // Fecha a navbar
-    navRef.current.classList.remove(styles.responsive_nav); // Remove a classe de estilo de navbar visível
+    setIsNavbarVisible(false);
+    navRef.current.classList.remove(styles.responsive_nav);
   };
 
   return (
