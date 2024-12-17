@@ -1,94 +1,45 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef, useState } from "react";
+import { FaTimes, FaBars } from "react-icons/fa";
 import styles from "./Header.module.css";
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
+  const navRef = useRef();
+  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const showNavbar = () => {
+    setIsNavbarVisible(!isNavbarVisible); // Alterna o estado da navbar
+    navRef.current.classList.toggle(styles.responsive_nav);
   };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-
-  // Fecha o menu ao clicar fora dele
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        closeMenu();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <header className={styles.header}>
-      <nav id="navbar">
-        <div className={styles.navbarContent}>
-          <div className={styles.navbarLogo}>
-            <a href="#slogan">&lt; Delta &gt;</a>
-          </div>
-          <div className={styles.hamburger} onClick={toggleMenu}>
-            &#9776;
-          </div>
-          <div
-            ref={menuRef}
-            className={`${styles.navbarMenu} ${
-              menuOpen ? styles.menuOpen : ""
+      <div className={styles.headerContent}>
+        <h3>
+          <a href="#slogan">&lt; Delta &gt;</a>
+        </h3>
+        <nav ref={navRef} className={styles.nav}>
+          <a href="#pace">Pace</a>
+          <a href="#imc">IMC</a>
+          <a href="#medidas">Medidas</a>
+          <a href="#temperatura">Temperatura</a>
+          <a href="#formas">Formas</a>
+
+          <button
+            className={`${styles.navBtn} ${styles.navCloseBtn} ${
+              isNavbarVisible ? styles.active : ""
             }`}
+            onClick={showNavbar}
           >
-            <ul>
-              <li>
-                <a
-                  href="#pace"
-                  className={styles.navLink}
-                  onClick={closeMenu}
-                >
-                  Pace
-                </a>
-              </li>
-              <li>
-                <a href="#imc" className={styles.navLink} onClick={closeMenu}>
-                  IMC
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#medidas"
-                  className={styles.navLink}
-                  onClick={closeMenu}
-                >
-                  Medidas
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#temperatura"
-                  className={styles.navLink}
-                  onClick={closeMenu}
-                >
-                  Temperatura
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#formas"
-                  className={styles.navLink}
-                  onClick={closeMenu}
-                >
-                  Formas
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+            <FaTimes />
+          </button>
+        </nav>
+        <button
+          className={`${styles.navBtn} ${isNavbarVisible ? styles.active : ""}`}
+          onClick={showNavbar}
+        >
+          <FaBars />
+        </button>
+      </div>
     </header>
   );
 }

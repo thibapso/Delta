@@ -1,170 +1,186 @@
-header {
-  display: flex;
-  justify-content: center;
+/* Geral */
+:root {
+  --mainColor: #333;
+  --textColor: white;
+  --secondaryColor: #2563ebf5;
+  --highlightColor: #10b981;
+  /* Cor de destaque, como o verde para hover */
 }
 
-nav {
-  background-color: #ffffff;
-  width: 100%;
-  height: 4rem;
+/* Header */
+.header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #2563eb;
+  justify-content: space-between;
+  height: 4rem;
+  padding: 0 2rem;
+  background-color: white;
+  color: var(--secondaryColor);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  right: 0;
+  z-index: 10;
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
-.navbarContent {
-  width: 72%;
+/* Adicionar estilo para o headerContent */
+.headerContent {
+  width: 70%;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
-.navbarLogo a {
-  font-size: 28px;
-  font-weight: 600;
+h3 a {
   text-decoration: none;
-  background-image: linear-gradient(to right,
-      rgba(37, 99, 235, 0.96),
-      rgba(17, 78, 212, 0.96));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: color 0.3s;
+  font-size: 1.65rem;
+  color: var(--secondaryColor);
 }
 
-.navbarLogo a:hover {
-  color: #073fb8;
+h3 a:hover {
+  color: #1d4ed8;
 }
 
-.navbarMenu ul {
-  display: flex;
-  gap: 1.25rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbarMenu a {
+.nav a {
+  margin: 0 0.5rem;
+  color: var(--secondaryColor);
   text-decoration: none;
-  color: #2563eb;
-  font-size: 18px;
-  font-weight: 500;
   position: relative;
-  transition: color 0.4s;
+  /* Para usar o ::after */
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  /* Transição suave para cor */
 }
 
-.navbarMenu a::after {
+.nav a::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: #2563eb;
-  transition: width 0.3s, background-color 0.3s;
+  background: var(--secondaryColor);
+  transition: width 0.3s ease, background-color 0.3s ease;
   position: absolute;
   bottom: -5px;
   left: 0;
 }
 
-.navbarMenu a:hover::after {
+.nav a:hover {
+  color: var(--secondaryColor);
+  /* Cor de texto quando hover */
+}
+
+.nav a:hover::after {
   width: 100%;
+  /* Aumenta a largura da linha */
+  background: var(--secondaryColor);
+  /* Muda a cor do sublinhado */
 }
 
-.moedas:hover,
-.imc:hover {
-  color: #10b981;
-}
-
-.moedas:hover::after {
-  background: #10b981;
-}
-
-.imc:hover::after {
-  background: #10b981;
-}
-
-.medidas:hover,
-.temperatura:hover {
-  color: #818cf8;
-}
-
-.medidas:hover::after {
-  background: #818cf8;
-}
-
-.temperatura:hover::after {
-  background: #818cf8;
-}
-
-.formas:hover {
-  color: #ef4444;
-}
-
-.formas:hover::after {
-  background: #ef4444;
-}
-
-/* Estilo para o ícone do menu hambúrguer */
-.hamburger {
-  display: none;
-  font-size: 28px;
+/* Botões da Navbar */
+.navBtn,
+.navCloseBtn {
+  padding: 5px;
   cursor: pointer;
-  color: #2563eb;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  font-size: 1.8rem;
+  width: 30px;
+  visibility: hidden;
+  opacity: 0;
 }
 
-/* Estilo responsivo */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+.navCloseBtn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
 
-  .navbarMenu {
+/* Exibição da navbar */
+.nav {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+@media (min-width: 770px) {
+  .navBtn {
     display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 4rem;
-    right: 0;
-    width: 100%;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+}
 
-  .navbarMenu ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .navbarMenu a {
-    font-size: 20px;
-    /* Ajuste de tamanho opcional */
-  }
-
-  .navbarMenu a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #2563eb;
-    transition: width 0.3s, background-color 0.3s;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-  }
-
-  .navbarMenu a:hover::after {
+/* Responsivo */
+@media only screen and (max-width: 770px) {
+  .headerContent {
     width: 100%;
   }
 
-  .menuOpen {
+  .navBtn {
     display: flex;
-    /* Mostra o menu quando ativo */
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: white;
+    transform: translateY(-100%);
+  }
+
+  .responsive_nav {
+    transform: translateY(0);
+  }
+
+  .nav a {
+    font-size: 1.5rem;
+  }
+
+  /* Hover nos botões */
+  .navBtn:hover,
+  .navCloseBtn:hover {
+    color: white;
+    background-color: hsla(221, 83%, 53%, 0.3);
+  }
+
+  /* Aplique a cor do ícone do hambúrguer diretamente */
+  .navBtn svg,
+  .navCloseBtn svg {
+    color: var(--secondaryColor);
+    padding-top: 0.3rem;
+  }
+
+  .navBtn svg:hover,
+  .navCloseBtn svg:hover {
+    color: var(--secondaryColor);
+    background-color: transparent;
+    padding-top: 0.25rem;
+  }
+
+  /* Quando o botão é ativado */
+  .navBtn.active svg,
+  .navCloseBtn.active svg {
+    color: var(--secondaryColor);
+  }
+
+  /* Altere a cor do ícone quando o mouse passar */
+  .navBtn:hover svg,
+  .navCloseBtn:hover svg {
+    color: var(--secondaryColor);
   }
 }
