@@ -82,6 +82,7 @@ function Pace() {
               <div className={styles.inlineInputs}>
                 <div className={styles.inputField}>
                   <input
+                    className={styles.inputTempo}
                     type="number"
                     value={timeHours}
                     onFocus={() => timeHours === "0" && setTimeHours("")}
@@ -95,6 +96,7 @@ function Pace() {
                 </div>
                 <div className={styles.inputField}>
                   <input
+                    className={styles.inputTempo}
                     type="number"
                     value={timeMin}
                     onFocus={() => timeMin === "0" && setTimeMin("")}
@@ -108,6 +110,7 @@ function Pace() {
                 </div>
                 <div className={styles.inputField}>
                   <input
+                    className={styles.inputTempo}
                     type="number"
                     value={timeSec}
                     onFocus={() => timeSec === "0" && setTimeSec("")}
