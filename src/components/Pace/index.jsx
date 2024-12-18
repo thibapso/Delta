@@ -91,7 +91,7 @@ function Pace() {
                     min="0"
                     required
                   />
-                  {isSmallScreen && <span>H</span>}
+                  {isSmallScreen && <span>Horas</span>}
                 </div>
                 <div className={styles.inputField}>
                   <input
@@ -104,7 +104,7 @@ function Pace() {
                     min="0"
                     required
                   />
-                  {isSmallScreen && <span>M</span>}
+                  {isSmallScreen && <span>Minutos</span>}
                 </div>
                 <div className={styles.inputField}>
                   <input
@@ -117,7 +117,7 @@ function Pace() {
                     min="0"
                     required
                   />
-                  {isSmallScreen && <span>S</span>}
+                  {isSmallScreen && <span>Segundos</span>}
                 </div>
               </div>
             </div>
