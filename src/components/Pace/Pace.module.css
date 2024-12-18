@@ -34,6 +34,10 @@
     max-width: 450px;
 }
 
+.inputBox {
+    margin-bottom: 20px;
+}
+
 .inputBox label {
     font-size: 1.1rem;
     color: #cbd5e1;
@@ -48,6 +52,7 @@
     padding: 0.3rem;
     border-radius: 3px;
     margin-top: 3px;
+    width: 100%;
 }
 
 .material-symbols-outlined {
@@ -213,13 +218,13 @@ button:focus {
     color: #cbd5e1;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
     .paceImage {
         display: none;
     }
 
     .inlineInputs {
-        padding: 7rem 0 6rem;
+        padding: 7rem 0 5rem;   
         display: flex;
         flex-direction: column;
         justify-content: center;

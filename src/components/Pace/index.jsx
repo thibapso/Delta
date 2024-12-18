@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Pace.module.css";
 import IMGRunning from "../../assets/running.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function Pace() {
-  const [distance, setDistance] = useState("");
-  const [timeHours, setTimeHours] = useState("");
-  const [timeMin, setTimeMin] = useState("");
-  const [timeSec, setTimeSec] = useState("");
+  const [distance, setDistance] = useState("0");
+  const [timeHours, setTimeHours] = useState("0");
+  const [timeMin, setTimeMin] = useState("0");
+  const [timeSec, setTimeSec] = useState("0");
   const [result, setResult] = useState("");
   const [showResult, setShowResult] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1024);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmallScreen(window.innerWidth <= 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const calculate = () => {
     const totalSec =
@@ -52,6 +59,7 @@ function Pace() {
             <h1 className={styles.title} id="title">
               Calculadora Pace
             </h1>
+
             <div className={styles.inputBox}>
               <label htmlFor="distance">Distância (km)</label>
               <div className={styles.inputField}>
@@ -60,6 +68,8 @@ function Pace() {
                   type="number"
                   id="distance"
                   value={distance}
+                  onFocus={() => distance === "0" && setDistance("")}
+                  onBlur={() => distance === "" && setDistance("0")}
                   onChange={(e) => setDistance(e.target.value)}
                   required
                 />
@@ -68,32 +78,47 @@ function Pace() {
             </div>
 
             <div className={styles.inputBox}>
-              <label>Tempo Total (h/m/s)</label>
+              <label>Tempo total (h/m/s)</label>
               <div className={styles.inlineInputs}>
-                <input
-                  type="number"
-                  value={timeHours}
-                  onChange={(e) => setTimeHours(e.target.value)}
-                  placeholder="H"
-                  min="0"
-                  required
-                />
-                <input
-                  type="number"
-                  value={timeMin}
-                  onChange={(e) => setTimeMin(e.target.value)}
-                  placeholder="M"
-                  min="0"
-                  required
-                />
-                <input
-                  type="number"
-                  value={timeSec}
-                  onChange={(e) => setTimeSec(e.target.value)}
-                  placeholder="S"
-                  min="0"
-                  required
-                />
+                <div className={styles.inputField}>
+                  <input
+                    type="number"
+                    value={timeHours}
+                    onFocus={() => timeHours === "0" && setTimeHours("")}
+                    onBlur={() => timeHours === "" && setTimeHours("0")}
+                    onChange={(e) => setTimeHours(e.target.value)}
+                    placeholder="H"
+                    min="0"
+                    required
+                  />
+                  {isSmallScreen && <span>H</span>}
+                </div>
+                <div className={styles.inputField}>
+                  <input
+                    type="number"
+                    value={timeMin}
+                    onFocus={() => timeMin === "0" && setTimeMin("")}
+                    onBlur={() => timeMin === "" && setTimeMin("0")}
+                    onChange={(e) => setTimeMin(e.target.value)}
+                    placeholder="M"
+                    min="0"
+                    required
+                  />
+                  {isSmallScreen && <span>M</span>}
+                </div>
+                <div className={styles.inputField}>
+                  <input
+                    type="number"
+                    value={timeSec}
+                    onFocus={() => timeSec === "0" && setTimeSec("")}
+                    onBlur={() => timeSec === "" && setTimeSec("0")}
+                    onChange={(e) => setTimeSec(e.target.value)}
+                    placeholder="S"
+                    min="0"
+                    required
+                  />
+                  {isSmallScreen && <span>S</span>}
+                </div>
               </div>
             </div>
 
@@ -113,9 +138,9 @@ function Pace() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Mais informações sobre o IMC
+                  Mais informações sobre o Pace
                 </a>
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <i className="fa-solid fa-arrow-up-right-from-square"></i>
               </div>
             </div>
           )}

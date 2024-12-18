@@ -4,8 +4,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import IMGHalter from "../../assets/halter.png";
 
 function Imc() {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("0");
+  const [height, setHeight] = useState("0");
   const [bmi, setBmi] = useState(null);
   const [description, setDescription] = useState("");
   const [showInfo, setShowInfo] = useState(false);
@@ -39,11 +39,11 @@ function Imc() {
 
   const getBmiClass = (bmi) => {
     if (bmi < 18.5) {
-      return styles.attention; 
+      return styles.attention;
     } else if (bmi >= 18.5 && bmi <= 24.9) {
       return styles.normal;
     } else {
-      return styles.attention; 
+      return styles.attention;
     }
   };
 
@@ -72,6 +72,8 @@ function Imc() {
                   id="weight"
                   name="weight"
                   value={weight}
+                  onFocus={() => weight === "0" && setWeight("")}
+                  onBlur={() => weight === "" && setWeight("0")}
                   onChange={(e) => setWeight(e.target.value)}
                   required
                 />
@@ -89,6 +91,8 @@ function Imc() {
                   id="height"
                   name="height"
                   value={height}
+                  onFocus={() => height === "0" && setHeight("")}
+                  onBlur={() => height === "" && setHeight("0")}
                   onChange={(e) => setHeight(e.target.value)}
                   required
                 />
