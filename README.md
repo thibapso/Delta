@@ -1,6 +1,6 @@
 # 🚀 Delta - Ferramentas de Conversão e Cálculo
 
-**Delta** é uma plataforma web moderna e responsiva para cálculos e conversões rápidas. Seja para calcular Pace em corridas, IMC, conversões de medidas ou temperaturas, o **Delta** resolve tudo para você.
+**Delta** é uma plataforma web moderna e responsiva, desenvolvida integralmente por mim, para cálculos e conversões rápidas.
 
 ---
 
